@@ -1,11 +1,11 @@
 ! Biconjugate gradient stabilized method
-! COPMPILATION: f90 linalg.f90 bicg.f90 -o bicg.exe -xopenmp
+! COPMPILATION: f90 linalg.f90 bicg_stab.f90 -o bicg_stab.exe -xopenmp
 ! RUN         : ./bicg.exe Ndim NumProc -key
 !                               Ndim - matrix dimension; NumProc - number of openmp threads
 !                               key: -3diag - test run for 3 diag matrix
 !                                        -identity - test run for E matrix
 
-program bicg
+program bicg_stab
 use linalg
 use omp_lib
 implicit none
@@ -89,7 +89,7 @@ omega = 1.
 bb = norm2(b)
 rr = bb
 
-! BiCG: let r0 = b
+! BiCGSTAB: let r0 = b
 it = 0
 do while (rr / bb > eps)
         rho1 = dotprod(b,r)
@@ -123,4 +123,4 @@ deallocate(v)
 deallocate(p)
 deallocate(s)
 deallocate(t)
-end program bicg
+end program bicg_stab
