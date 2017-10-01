@@ -87,6 +87,7 @@ rho0 = 1.
 alpha = 1.
 omega = 1.
 bb = norm2(b)
+if (bb < 1.e-10) bb = 1.
 rr = bb
 
 ! BiCGSTAB: let r0 = b
