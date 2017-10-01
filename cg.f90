@@ -65,6 +65,7 @@ p = b
 r = 0.
 r(:,1) = b
 bb = norm2(b)
+if (bb < 1.e-10) bb = 1.
 rr = bb * bb
 
 t2 = omp_get_wtime()
