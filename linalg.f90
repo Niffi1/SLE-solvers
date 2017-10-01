@@ -26,7 +26,7 @@ real*8, dimension(:,:), intent(in) :: A, B
 real*8, dimension(size(A, dim = 1), size(B, dim = 2))  :: multmat
 real*8, dimension(size(A, dim = 2)) :: row
 integer :: i,j,k,m,n,p
-'
+
 multmat = 0.
 n = size(A, dim = 1)
 m = size(B, dim = 2)
